@@ -44,24 +44,11 @@
             <span>
                 Category: <%= skill.category %>
             </span>
+            <p class="skill-note">
+    Mentor requests and learner matching coming soon.
+</p>
 
-            <div class="skill-actions">
-
-                <a href="/edit-skill/<%= skill._id %>">
-                    <button type="button" class="edit-btn">
-                        Edit Skill
-                    </button>
-                </a>
-
-                <form action="/delete-skill/<%= skill._id %>" method="POST">
-
-                    <button type="submit" class="delete-btn">
-                        Delete Skill
-                    </button>
-
-                </form>
-
-            </div>
+            
 
         </div>
 

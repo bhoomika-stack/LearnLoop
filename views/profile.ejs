@@ -22,76 +22,100 @@
         </div>
     </nav>
 
-    <section class="profile-section">
+    
+<section class="profile-section">
 
-        <div class="profile-card">
+    <div class="profile-card">
 
-            <div class="profile-header">
-                <h1>👤 My Profile</h1>
-                <p>Your learning identity on LearnLoop</p>
+        <div class="profile-header">
+            <h1>👤 My Profile</h1>
+            <p>Your learning identity on LearnLoop</p>
+        </div>
+
+        <div class="profile-info">
+
+            <div class="info-box">
+                <h3>Username</h3>
+                <p><%= user.username %></p>
             </div>
 
-            <div class="profile-info">
-
-                <div class="info-box">
-                    <h3>Username</h3>
-                    <p>
-                        <%= user.username %>
-                    </p>
-                </div>
-
-                <div class="info-box">
-                    <h3>Email</h3>
-                    <p>
-                        <%= user.email %>
-                    </p>
-                </div>
-
+            <div class="info-box">
+                <h3>Email</h3>
+                <p><%= user.email %></p>
             </div>
-
-            <div class="skills-container">
-
-                <div class="skills-card">
-                    <h2>📚 Skills I Teach</h2>
-
-                    <ul>
-
-                        <% allSkills.forEach(skill=> { %>
-
-                            <li>
-                                <%= skill.skillName %>
-                            </li>
-
-                            <% }) %>
-
-                    </ul>
-                </div>
-
-                <div class="skills-card">
-                    <h2>🎯 Skills I Want To Learn</h2>
-
-                    <div class="coming-soon">
-
-                        <p>
-                            Learning goals feature coming soon.
-                        </p>
-
-                        <span>
-                            Track skills you want to learn and connect with mentors.
-                        </span>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <button class="primary-btn">
-                Edit Profile
-            </button>
 
         </div>
 
-    </section>
+        <div class="skills-container">
+
+            <!-- Skills I Teach -->
+            <div class="skills-card">
+
+                <h2>📚 Skills I Teach</h2>
+
+                <ul class="profile-skills-list">
+
+                    <% allSkills.forEach(skill => { %>
+
+                        <li class="profile-skill-item">
+
+                            <span class="skill-name">
+                                <%= skill.skillName %>
+                            </span>
+
+                            <div class="skill-actions">
+
+                                <a href="/edit-skill/<%= skill._id %>">
+                                    <button type="button" class="edit-btn">
+                                        Edit
+                                    </button>
+                                </a>
+
+                                <form action="/delete-skill/<%= skill._id %>" method="POST">
+
+                                    <button type="submit" class="delete-btn">
+                                        Delete
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </li>
+
+                    <% }) %>
+
+                </ul>
+
+            </div>
+
+            <!-- Skills I Want To Learn -->
+            <div class="skills-card">
+
+                <h2>🎯 Skills I Want To Learn</h2>
+
+                <div class="coming-soon">
+
+                    <p>
+                        Learning goals feature coming soon.
+                    </p>
+
+                    <span>
+                        Add skills you want to learn, discover mentors,
+                        and receive personalized recommendations.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <footer class="footer">
 

@@ -88,12 +88,8 @@ app.post("/register", async (req, res) => {
 
         await user.save();
 
-        res.send(`
-    <h1>Registration Successful</h1>
-    <p>Welcome ${user.username}</p>
-    <p>Your email is ${user.email}</p> 
+        res.redirect("/login");
     
-`);
 
 
     } catch (error) {
@@ -183,9 +179,7 @@ app.get("/browseSkills", async (req, res) => {
         return res.redirect("/login");
     }
 
-    const allSkills = await Skill.find({
-        userId: req.session.userId
-    });
+    const allSkills = await Skill.find();
     console.log(allSkills);
     res.render("browseSkills", {
         allSkills: allSkills
@@ -205,14 +199,20 @@ app.post("/add-skills", async (req, res) => {
     });
     await newSkill.save();
 
-    res.redirect("/browseSkills");
+    res.redirect("/profile");
 });
 
 app.post("/delete-skill/:id", async (req, res) => {
 
+    const skill = await Skill.findById(req.params.id);
+
+    if (skill.userId !== req.session.userId) {
+        return res.send("Unauthorized");
+    }
+
     await Skill.findByIdAndDelete(req.params.id);
 
-    res.redirect("/browseSkills");
+    res.redirect("/profile");
 
 });
 
@@ -224,6 +224,10 @@ app.get("/edit-skill/:id", async (req, res) => {
 
     const skill = await Skill.findById(req.params.id);
 
+    if (skill.userId !== req.session.userId) {
+        return res.send("Unauthorized");
+    }
+
     res.render("editSkill", {
         skill: skill
     });
@@ -232,16 +236,21 @@ app.get("/edit-skill/:id", async (req, res) => {
 
 app.post("/edit-skill/:id", async (req, res) => {
 
+    const skill = await Skill.findById(req.params.id);
+
+    if (skill.userId !== req.session.userId) {
+        return res.send("Unauthorized");
+    }
+
     await Skill.findByIdAndUpdate(req.params.id, {
         skillName: req.body.skillName,
         category: req.body.category,
         description: req.body.description
     });
 
-    res.redirect("/browseSkills");
+    res.redirect("/profile");
 
 });
-
 
 
 
