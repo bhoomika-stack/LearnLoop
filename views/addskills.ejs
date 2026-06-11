@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Add Skill</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    
+    <nav>
+        <div class="logo">LearnLoop</div>
+
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <section class="form-section">
+
+        <div class="form-card">
+
+            <h1>Add New Skill</h1>
+
+            <p>
+                Share your knowledge with the LearnLoop community.
+            </p>
+
+            <form action="/add-skills" method="post">
+
+                <input type="text" placeholder="Skill Name" name="skillName" required>
+
+                <input type="text" placeholder="Category (Music, Coding, Design...)" name="category" required>
+
+                <textarea placeholder="Describe your skill..." name="description" rows="5" required></textarea>
+
+                
+                    <button class="primary-btn">
+                        Add Skill
+                    </button>
+                
+
+            </form>
+
+        </div>
+
+    </section>
+    <footer class="footer">
+
+
+<div class="footer-container">
+
+    <h2 class="footer-logo">LearnLoop</h2>
+
+    <p class="footer-description">
+        A skill-sharing platform where learners become teachers
+        and teachers become learners.
+    </p>
+
+    <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+
+    <p class="footer-tagline">
+        Learn • Teach • Grow Together
+    </p>
+
+    <p class="footer-copy">
+        © 2026 LearnLoop | Built using Node.js, Express.js, MongoDB Atlas & EJS
+    </p>
+
+</div>
+
+
+</footer>
+
+
+</body>
+
+</html>

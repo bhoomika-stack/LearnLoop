@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnLoop - Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="logo">LearnLoop</div>
+
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+
+        <div class="profile-card">
+
+            <div class="profile-header">
+                <h1>👤 My Profile</h1>
+                <p>Your learning identity on LearnLoop</p>
+            </div>
+
+            <div class="profile-info">
+
+                <div class="info-box">
+                    <h3>Username</h3>
+                    <p>
+                        <%= user.username %>
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Email</h3>
+                    <p>
+                        <%= user.email %>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="skills-container">
+
+                <div class="skills-card">
+                    <h2>📚 Skills I Teach</h2>
+
+                    <ul>
+
+                        <% allSkills.forEach(skill=> { %>
+
+                            <li>
+                                <%= skill.skillName %>
+                            </li>
+
+                            <% }) %>
+
+                    </ul>
+                </div>
+
+                <div class="skills-card">
+                    <h2>🎯 Skills I Want To Learn</h2>
+
+                    <div class="coming-soon">
+
+                        <p>
+                            Learning goals feature coming soon.
+                        </p>
+
+                        <span>
+                            Track skills you want to learn and connect with mentors.
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="primary-btn">
+                Edit Profile
+            </button>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+
+        <div class="footer-container">
+
+            <h2 class="footer-logo">LearnLoop</h2>
+
+            <p class="footer-description">
+                A skill-sharing platform where learners become teachers
+                and teachers become learners.
+            </p>
+
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p class="footer-tagline">
+                Learn • Teach • Grow Together
+            </p>
+
+            <p class="footer-copy">
+                © 2026 LearnLoop | Built using Node.js, Express.js, MongoDB Atlas & EJS
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>

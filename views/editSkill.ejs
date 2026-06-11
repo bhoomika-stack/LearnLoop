@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Skill</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <div class="edit-skill-container">
+
+            <div class="edit-card">
+
+                <h1>Edit Skill</h1>
+
+                <p class="edit-subtitle">
+                    Update your skill information and keep your profile up to date.
+                </p>
+
+                <form action="/edit-skill/<%= skill._id %>" method="POST">
+
+                    <label>Skill Name</label>
+
+                    <input type="text" name="skillName" value="<%= skill.skillName %>" required>
+
+                    <label>Category</label>
+
+                    <input type="text" name="category" value="<%= skill.category %>" required>
+
+                    <label>Description</label>
+
+                    <textarea name="description" rows="5" required><%= skill.description %></textarea>
+
+                    <button type="submit" class="update-btn">
+                        Update Skill
+                    </button>
+
+                </form>
+
+                <a href="/browseSkills" class="back-link">
+                    ← Back to Browse Skills
+                </a>
+
+            </div>
+
+        </div>
+</body>
+
+</html>
