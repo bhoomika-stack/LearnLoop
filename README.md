@@ -87,11 +87,13 @@ node app.js
 
 ## Future Improvements
 
-* Learning Goals Module
-* Community Features
-* Search and Filtering
-* Profile Pictures
-* Mentor Discovery
+- Learning Goals Management
+- Mentor Discovery and Matching
+- Search and Filter Skills
+- User Profile Pictures
+- Skill Request System
+- Community Messaging
+- Personalized Skill Recommendations
 
 ## Author
 

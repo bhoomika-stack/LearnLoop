@@ -8,7 +8,7 @@ const Skill = require("./models/skills");
 
 const User = require("./models/Users");
 
-const mongoose = require("mongoose"); //using database requires mongoose
+const mongoose = require("mongoose"); // for using database mongoose is required.
 
 const express = require("express"); //taking express module in use
 
@@ -257,6 +257,8 @@ app.post("/edit-skill/:id", async (req, res) => {
 
 
 
-app.listen(3000, () => {  //listening for user on particular port number
-    console.log("Server is running!");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
