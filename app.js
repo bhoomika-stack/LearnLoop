@@ -171,7 +171,7 @@ app.get("/addskills", (req, res) => {
     if (!req.session.userId) {
         return res.redirect("/login");
     }
-    res.render("addSkills");
+    res.render("addskills");
 });
 
 app.get("/browseSkills", async (req, res) => {
