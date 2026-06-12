@@ -6,7 +6,7 @@ const session = require("express-session");
 
 const Skill = require("./models/skills");
 
-const User = require("./models/Users");
+const User = require("./models/users");
 
 const mongoose = require("mongoose"); // for using database mongoose is required.
 
